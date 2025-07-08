@@ -1,6 +1,10 @@
-module.exports = {
-  darkMode: 'class', // REQUIRED
-  content: ['./src/**/*.{js,jsx,ts,tsx}'], // adjust if needed
+// tailwind.config.js
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  darkMode: 'class', // ✅ Enables class-based dark mode
   theme: {
     extend: {},
   },
