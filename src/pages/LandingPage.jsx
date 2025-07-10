@@ -68,7 +68,7 @@ const LandingPage = () => {
         {/* Right Image */}
         <div className="md:w-1/2 mb-10 md:mb-0 flex justify-center z-10">
           <img
-            src={`${process.env.PUBLIC_URL}/events/background.png`}
+            src={`${import.meta.env.BASE_URL}events/background.png`}
             alt="Event Illustration"
             className="w-full max-w-md rounded-2xl shadow-xl"
           />

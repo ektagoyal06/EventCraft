@@ -246,7 +246,7 @@ const sampleEvents = [
     date: 'Sat, 5 Jul onwards',
     location: 'Kedarnath Sahni Auditorium: Delhi',
     price: 499,
-    image: '/events/bassi.jpeg',
+    image: `${import.meta.env.BASE_URL}events/bassi.jpeg`,
   },
   {
     id: 2,
@@ -254,7 +254,7 @@ const sampleEvents = [
     date: 'Sun, 6 Jul',
     location: 'The Laugh Store: DLF Cyberhub, Gurugram',
     price: 299,
-    image: '/events/banger.avif',
+    image: `${import.meta.env.BASE_URL}events/banger.avif`,
   },
   {
     id: 3,
@@ -262,7 +262,7 @@ const sampleEvents = [
     date: 'Tue, 1 Jul onwards',
     location: 'Comedy County: Noida',
     price: 199,
-    image: '/events/comedy.avif',
+    image: `${import.meta.env.BASE_URL}events/comedy.avif`,
   },
   {
     id: 4,
@@ -270,7 +270,7 @@ const sampleEvents = [
     date: 'Fri, 18 Jul onwards',
     location: 'The Laugh Store: DLF Cyberhub, Gurugram',
     price: 349,
-    image: '/events/daily.avif',
+    image: `${import.meta.env.BASE_URL}events/daily.avif`,
   },
   {
     id: 5,
@@ -278,7 +278,7 @@ const sampleEvents = [
     date: 'Wed, 9 Jul onwards',
     location: 'The Laugh Store: DLF Cyberhub, Gurugram',
     price: 279,
-    image: '/events/dating.avif',
+    image: `${import.meta.env.BASE_URL}events/dating.avif`,
   },
   {
     id: 6,
@@ -286,7 +286,7 @@ const sampleEvents = [
     date: 'Thu, 3 Jul onwards',
     location: 'TOT Studios',
     price: 299,
-    image: '/events/adult.avif',
+    image: `${import.meta.env.BASE_URL}events/adult.avif`,
   },
 ];
 
@@ -297,7 +297,7 @@ const amusementEvents = [
     date: 'Daily, 10 AM - 7 PM',
     location: 'Rohini, Delhi',
     price: 700,
-    image: '/events/adventure.jpeg',
+    image: `${import.meta.env.BASE_URL}events/adventure.jpeg`,
   },
   {
     id: 8,
@@ -305,7 +305,7 @@ const amusementEvents = [
     date: 'Weekends Only',
     location: 'Sector 38A, Noida',
     price: 999,
-    image: '/events/wow.jpeg',
+    image: `${import.meta.env.BASE_URL}events/wow.jpeg`,
   },
   {
     id: 9,
@@ -313,7 +313,7 @@ const amusementEvents = [
     date: 'Fri - Sun, 11 AM - 6 PM',
     location: 'Khopoli, Maharashtra',
     price: 1299,
-    image: '/events/snow.avif',
+    image: `${import.meta.env.BASE_URL}events/snow.avif`,
   },
   {
     id: 10,
@@ -321,7 +321,7 @@ const amusementEvents = [
     date: 'Fri - Sun, 11 AM - 6 PM',
     location: 'Magneto Mall',
     price: 1299,
-    image: '/events/TimeZone.jpeg',
+    image: `${import.meta.env.BASE_URL}events/TimeZone.jpeg`,
   },
 ];
 
