@@ -17,7 +17,9 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // 🔗 Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('Database connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 
 // ✅ Mongoose Models
 const eventSchema = new mongoose.Schema({
@@ -202,7 +204,7 @@ app.post('/api/login', async (req, res) => {
     res.status(200).json({
       message: 'Login successful',
       user: {
-         _id: user._id,
+        _id: user._id,
         name: user.name,
         email: user.email,
         contact: user.contact,
