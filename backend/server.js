@@ -11,10 +11,11 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: 'https://ektagoyal06.github.io',
-  credentials:true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  // credentials:true,
+  // methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  // allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+app.options('*', cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
