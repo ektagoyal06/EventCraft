@@ -21,7 +21,7 @@ const OrganizerDashboard = () => {
       const user = JSON.parse(storedUser);
       setUserDetails(user);
 
-      fetch(`http://localhost:5000/api/events/organizer/${user._id}`)
+      fetch(`http://eventcraft-bj8y.onrender.com/api/events/organizer/${user._id}`)
         .then((res) => res.json())
         .then((data) => setCreatedEvents(data.events || []))
         .catch((err) => console.error('Error fetching events:', err));
@@ -105,7 +105,7 @@ const OrganizerDashboard = () => {
                   className="bg-white dark:bg-gray-700 rounded-2xl shadow hover:shadow-lg overflow-hidden"
                 >
                   <img
-                    src={`http://localhost:5000/uploads/${event.posterImage}`}
+                    src={`http://eventcraft-bj8y.onrender.com/uploads/${event.posterImage}`}
                     alt={event.title}
                     className="w-full h-56 object-cover"
                   />

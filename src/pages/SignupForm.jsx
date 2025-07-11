@@ -47,7 +47,7 @@ const SignupForm = () => {
       let endpoint = "";
       let payload = {};
       if (isSignIn) {
-        endpoint = "http://localhost:5000/api/login";  // Correct route
+        endpoint = "http://eventcraft-bj8y.onrender.com/api/login";  // Correct route
         payload = {
           email: formData.email,
           password: formData.password,
@@ -58,8 +58,8 @@ const SignupForm = () => {
         // 📝 Sign Up logic
         endpoint =
           role === "Organizer"
-            ? "http://localhost:5000/api/signup/organizer"
-            : "http://localhost:5000/api/signup";
+            ? "http://eventcraft-bj8y.onrender.com/api/signup/organizer"
+            : "http://eventcraft-bj8y.onrender.com/api/signup";
 
         payload =
           role === "Organizer"
