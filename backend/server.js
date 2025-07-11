@@ -9,16 +9,12 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-const corsOptions = {
-  origin: ['https://ektagoyal06.github.io', 'http://localhost:5173'],
+app.use(cors({
+  origin: 'https://ektagoyal06.github.io',
+  credentials:true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
-
+}));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
