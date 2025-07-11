@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {
   "name": "backend",
   "version": "1.0.0",
@@ -21,25 +21,4 @@
     "openai": "^5.8.2"
   }
 }
-=======
-{
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.10.0",
-    "cors": "^2.8.5",
-    "dotenv": "^17.0.1",
-    "express": "^5.1.0",
-    "mongoose": "^8.16.1",
-    "multer": "^2.0.1"
-  }
-}
->>>>>>> 87a766492b4d90c9d5291afe21c40a8a81105199
+

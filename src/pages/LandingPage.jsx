@@ -20,11 +20,11 @@ const LandingPage = () => {
   }, [darkMode]);
 
   const eventImages = [
-    "/events/bassi.jpeg",
-    "/events/adult.avif",
-    "/events/comedy.avif",
-    "/events/dating.avif",
-    "/events/banger.avif",
+    `${import.meta.env.BASE_URL}events/bassi.jpeg`,
+    `${import.meta.env.BASE_URL}events/adult.avif`,
+    `${import.meta.env.BASE_URL}events/comedy.avif`,
+    `${import.meta.env.BASE_URL}events/dating.avif`,
+    `${import.meta.env.BASE_URL}events/banger.avif`,
   ];
 
   return (
