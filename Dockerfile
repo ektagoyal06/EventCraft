@@ -1,49 +1,35 @@
-# ---------------- FRONTEND BUILD ----------------
-FROM node:18-alpine AS frontend
+# -------- FRONTEND BUILD --------
+FROM node:18-alpine as frontend
 
-# Set working directory
-WORKDIR /frontend
+WORKDIR /app
 
-# Copy frontend package files
-COPY frontend/package*.json ./
+# Copy root files
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy all frontend source code
-COPY frontend/ ./
+# Copy all project files
+COPY . .
 
-# Build the frontend for production
+# Build frontend (if your frontend build command is different, change this)
 RUN npm run build
 
 
-
-# ---------------- BACKEND BUILD ----------------
-FROM node:18-alpine AS backend
+# -------- BACKEND BUILD --------
+FROM node:18-alpine as backend
 
 WORKDIR /app
 
-# Copy backend package files
-COPY backend/package*.json ./
-
-# Install backend dependencies
+# Copy package.json again for backend install
+COPY package*.json ./
 RUN npm install
 
-# Copy backend source code
-COPY backend/ ./
+# Copy full project
+COPY . .
 
-
-# ---------------- FINAL IMAGE ----------------
-FROM node:18-alpine
-
-WORKDIR /app
-
-# Copy backend code from backend stage
-COPY --from=backend /app ./
-
-# Copy built frontend into backend public folder
-COPY --from=frontend /frontend/dist ./public
+# Copy built frontend into backend/public
+COPY --from=frontend /app/dist ./public
 
 EXPOSE 5000
-
 CMD ["node", "server.js"]
