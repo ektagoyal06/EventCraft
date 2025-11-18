@@ -1,35 +1,34 @@
 # -------- FRONTEND BUILD --------
-FROM node:18-alpine as frontend
+FROM node:18-alpine AS frontend
 
-WORKDIR /app
+WORKDIR /frontend
 
-# Copy root files
+# Copy frontend package files (root package.json)
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy all project files
+# Copy Vite React frontend code
 COPY . .
 
-# Build frontend (if your frontend build command is different, change this)
+# Build frontend
 RUN npm run build
 
 
 # -------- BACKEND BUILD --------
-FROM node:18-alpine as backend
+FROM node:18-alpine AS backend
 
 WORKDIR /app
 
-# Copy package.json again for backend install
-COPY package*.json ./
+# Copy backend package.json
+COPY backend/package*.json ./
 RUN npm install
 
-# Copy full project
-COPY . .
+# Copy backend source code
+COPY backend/ .
 
 # Copy built frontend into backend/public
-COPY --from=frontend /app/dist ./public
+COPY --from=frontend /frontend/dist ./public
 
 EXPOSE 5000
+
 CMD ["node", "server.js"]
